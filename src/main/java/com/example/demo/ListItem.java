@@ -15,15 +15,16 @@ public class ListItem {
 
     @NotNull
     @Size(min=4)
-    private String title;
+    private String listitemtitle;
 
     @NotNull
     @Size(min=4)
-    private String description;
+    private String listitemdesc;
 
     @NotNull
     @Size(min=10)
     private String duedate;
+
 
     public long getId() {
         return id;
@@ -33,20 +34,20 @@ public class ListItem {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getListitemtitle() {
+        return listitemtitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setListitemtitle(String listitemtitle) {
+        this.listitemtitle = listitemtitle;
     }
 
-    public String getDescription() {
-        return description;
+    public String getListitemdesc() {
+        return listitemdesc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setListitemdesc(String listitemdesc) {
+        this.listitemdesc = listitemdesc;
     }
 
     public String getDuedate() {
@@ -57,7 +58,7 @@ public class ListItem {
         this.duedate = duedate;
     }
 }
-}
-}
+
+
 
 

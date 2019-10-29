@@ -14,21 +14,24 @@ import javax.validation.Valid;
 @Controller
 public class HomeController {
     @Autowired
-    ListRepository ListItemRepository
+    ListItemRepository listItemRepository;
 
     @RequestMapping("/")
-    public String listListItem(Model model){
+    public String listListItem(Model model) {
         model.addAttribute("listitem", new ListItem());
         return "listitem";
+    }
 
-    @GetMapping("add")
+    @GetMapping("/add")
     public String listItemForm(Model model){
-        model.addAttribute("listitem", new ListItem());
-        return "listitemform";
+            model.addAttribute("listitem", new ListItem());
+            return "listitemform";
+
+        }
 
     @PostMapping("/process")
-    public String processForm(@Valid ListItem listitem)
-        BindingResult result{
+    public String processForm(@Valid ListItem listitem,
+        BindingResult result){
             if (result.hasErrors()){
                 return "listitemform";
             }
@@ -39,7 +42,7 @@ public class HomeController {
     @RequestMapping("/detail/{id}")
     public String showListItem(@PathVariable("id") long id, Model model)
     {
-        model.addAttribute("listitem", listRepository.findById(id).get());
+        model.addAttribute("listitem", listItemRepository.findById(id).get());
         return "show";
     }
 
@@ -51,12 +54,10 @@ public class HomeController {
             }
 
     @RequestMapping("/delete/{id}")
-    public String deleteListItem(@PathVariable("id") long id,
+    public String deleteListItem(@PathVariable("id") long id){
         listItemRepository.deleteById(id);
         return "redirect:/";
 
-            }
-
-    }
+     }
 
 }
