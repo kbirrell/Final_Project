@@ -22,9 +22,9 @@
             <td th:text="${listitem.listitemdesc}"></td>
             <td th:text="${listitem.duedate}"></td>
             <td>
-                <a th:href="@{/update/{id}(listitem.id})}">Update</a>
-                <a th:href="@{/detail/{id}(listitem.id})}">Detail</a>
-                <a th:href="@{/delete/{id}(listitem.id})}">Delete</a>
+                <a th:href="@{/update/{id}(id=${listitem.id})}">Update</a>
+                <a th:href="@{/detail/{id}(id=${listitem.id})}">Detail</a>
+                <a th:href="@{/delete/{id}(id=${listitem.id})}">Delete</a>
             </td>
 
         </tr>

@@ -18,7 +18,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String listListItem(Model model) {
-        model.addAttribute("listitem", new ListItem());
+        model.addAttribute("listitems", listItemRepository.findAll());
         return "listitem";
     }
 
