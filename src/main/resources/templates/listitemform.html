@@ -1,30 +1,99 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>title</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+
+        <div class="row">
+            <div class="col-sm-3"> </div>
+
+            <div class="col-sm-9">
     <h1>List Item Form</h1>
+
+            </div></div>
+
+
     <form action="#" th:action="@{/process}" th:object="${listitem}" method="post">
         <input type="hidden"th:field="*{id}" />
 
-        List Item Title: <input type="text" th:field="*{listitemtitle}" />
-        <span th:if="${#fields.hasErrors('listitemtitle')}"
-              th:errors="*{listitemtitle}"></span> <br />
-
-        Description: <textarea rows="3" th:field="*{listitemdesc}" />
-        <span th:if="${#fields.hasErrors('listitemdesc')}"
-              th:errors="*{listitemdesc}"></span> <br />
-
-        Due Date: <input type="text" th:field="*{duedate}" />
-        <span th:if="${#fields.hasErrors('duedate')}"
-              th:errors="*{duedate}"></span> <br />
+        <br />
         <br />
 
-        <input type="submit" value="Submit" />
+
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="listitemtitle"> <span style="text-align:right">List Item Title: </span> </label>
+            </div>
+
+            <div class="col-sm-10">
+                <input id="listitemtitle" class="form-control-type=text" th:field="*{listitemtitle}" />
+                <span th:if="${#fields.hasErrors('listitemtitle')}"
+                      th:errors="*{listitemtitle}"></span>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-sm-2">
+
+        <label for="listitemdescription" style="text-align:right">Description:</label>
+
+            </div>
+
+            <div class="col-sm-10">
+
+        <textarea id="listitemdescription" class="form-control-type=text" rows="4" cols="35" th:field="*{listitemdesc}" />
+        <span th:if="${#fields.hasErrors('listitemdesc')}"
+              th:errors="*{listitemdesc}"></span>
+
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-sm-2">
+
+            <label for="listitemduedate" style="text-align:right">Due Date: </label>
+
+            </div>
+
+            <div class="col-sm-10">
+
+            <input  id="listitemduedate" class="form-control-type=text" type="text" th:field="*{duedate}" />
+        <span th:if="${#fields.hasErrors('duedate')}"
+              th:errors="*{duedate}"></span>
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-9">
+                <input type="submit" value="Submit" />
+
+            </div>
+        </div>
 
     </form>
+
+    </div>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>
